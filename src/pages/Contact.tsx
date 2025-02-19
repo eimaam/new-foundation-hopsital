@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import MapLocation from '../components/MapLocation';
 
 const Contact = () => {
   const formControls = {
@@ -151,6 +152,11 @@ const Contact = () => {
               </button>
             </motion.form>
           </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16">
+          <MapLocation />
         </div>
       </motion.div>
 

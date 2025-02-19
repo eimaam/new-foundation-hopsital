@@ -1,5 +1,6 @@
 import { Clock, Award, Users, Building, Phone, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import MapLocation from '../components/MapLocation';
 
 const About = () => {
   return (
@@ -92,6 +93,12 @@ const About = () => {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-6">Find Us</h2>
+          <MapLocation />
         </div>
       </motion.div>
     </div>

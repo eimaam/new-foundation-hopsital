@@ -87,7 +87,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">About New Foundation Hospital</h2>
+              <h2 className="text-xl md:text-3xl font-bold mb-6">About New Foundation Hospital</h2>
               <p className="mb-4">
                 Established in 1992, New Foundation Hospital is a licensed, private healthcare facility 
                 located in Lamisula Jabbamari, Maiduguri, Borno State. We are committed to delivering 
@@ -115,7 +115,7 @@ const Home = () => {
       {/* Medical Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Medical Excellence</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Medical Excellence</h2>
           <motion.div 
             variants={staggerChildren}
             initial="initial"
@@ -195,7 +195,7 @@ const Home = () => {
         className="py-16"
       >
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Meet Our Expert Team</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Meet Our Expert Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {featuredTeamMembers.map((member, index) => (
               <motion.div 

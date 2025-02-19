@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <Heart className="h-8 w-8" />
-              <span className="font-bold text-xl">New Foundation Hospital</span>
+              <span className="font-bold text-base md:text-xl">New Foundation Hospital</span>
             </Link>
           </div>
 
@@ -34,9 +34,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md hover:bg-blue-700 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md hover:bg-blue-700 focus:outline-none"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
