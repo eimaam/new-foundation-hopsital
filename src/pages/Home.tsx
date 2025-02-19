@@ -17,9 +17,9 @@ const Home = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="text-white">
-            <h1 className="text-5xl font-bold mb-4">Welcome to New Foundation Hospital</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">Welcome to New Foundation Hospital</h1>
             <p className="text-lg md:text-xl mb-2">Providing exceptional healthcare services since 1992</p>
-            <p className="text-xl mb-8">
+            <p className="text-lg md:text-xl mb-8">
               Your Health, Our Priority.
             </p>
             <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md inline-block">
@@ -159,8 +159,8 @@ const Home = () => {
       {/* Emergency Contact */}
       <section className="bg-blue-600 text-white py-12 my-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Emergency? Call Us Now</h2>
-          <p className="text-2xl">07060999747</p>
+          <h2 className="text-xl md:text-3xl font-bold mb-4">Emergency? Call Us Now</h2>
+          <p className="text-xl md:text-2xl font-medium">07060999747</p>
           <p className="mt-2">
             Available 24/7 to meet the healthcare needs of our patients with compassion, <br /> professionalism, and state-of-the-art medical care.
           </p>
