@@ -1,14 +1,32 @@
+import { motion } from 'framer-motion';
 import React from 'react';
-import { Clock, Award, Users, Phone, Stethoscope, Baby, Heart, FlaskRound, Presentation, Droplet } from 'lucide-react';
+import { Clock, Award, Users, Phone, Stethoscope, Baby, Heart, FlaskRound, Presentation, Droplet, UserCircle } from 'lucide-react';
 import { teamMembers } from '../data/teamMembers';
 
 const Home = () => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerChildren = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   const featuredTeamMembers = teamMembers.slice(0, 4);
   
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section 
+      {/* Hero Section with animation */}
+      <motion.section 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         className="relative h-[600px] bg-cover bg-center"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")'
@@ -27,35 +45,42 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <motion.section 
+        variants={staggerChildren}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ margin: "-100px" }} // Remove once: true to repeat animations
+        className="py-16 bg-gray-50"
+      >
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            {/* Add motion.div to each feature */}
+            <motion.div variants={fadeIn} className="text-center">
               <Clock className="w-12 h-12 mx-auto mb-4 text-blue-600" />
               <h3 className="text-xl font-semibold mb-2">24/7 Availability</h3>
               <p>Round-the-clock medical care for emergencies</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="text-center">
               <Award className="w-12 h-12 mx-auto mb-4 text-blue-600" />
               <h3 className="text-xl font-semibold mb-2">Licensed & Certified</h3>
               <p>Approved by Nigerian Ministry of Health</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-blue-600" />
               <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
               <p>Experienced healthcare professionals</p>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div variants={fadeIn} className="text-center">
               <Phone className="w-12 h-12 mx-auto mb-4 text-blue-600" />
               <h3 className="text-xl font-semibold mb-2">Easy Access</h3>
               <p>Quick and simple appointment booking</p>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
       <section className="py-16">
@@ -91,38 +116,68 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Medical Excellence</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <motion.div 
+            variants={staggerChildren}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ margin: "-100px" }} // Remove once: true to repeat animations
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <Stethoscope className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">General Medicine</h3>
               <p className="text-gray-600">Comprehensive medical care for patients of all ages</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            </motion.div>
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <Baby className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Pediatrics</h3>
               <p className="text-gray-600">Specialized healthcare for children and adolescents</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            </motion.div>
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <Heart className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Obstetrics & Gynecology</h3>
               <p className="text-gray-600">Complete women's health and maternity care</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            </motion.div>
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <FlaskRound className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Laboratory Services</h3>
               <p className="text-gray-600">Advanced diagnostic testing and analysis</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            </motion.div>
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <Presentation className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Pharmacy</h3>
               <p className="text-gray-600">24/7 pharmacy services with quality medications</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            </motion.div>
+            <motion.div
+              variants={fadeIn}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            >
               <Droplet className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Emergency Care</h3>
               <p className="text-gray-600">Round-the-clock emergency medical services</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           <div className="text-center mt-8">
             <a href="/services" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors">
               View All Services
@@ -131,21 +186,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16">
+      {/* Team Section with animations */}
+      <motion.section
+        variants={staggerChildren}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ margin: "-100px" }}
+        className="py-16"
+      >
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Meet Our Expert Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {featuredTeamMembers.map((member, index) => (
-              <div key={index} className="text-center">
-                <img 
-                  src={member.image}
-                  alt={member.name}
-                  className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-semibold">{member.name}</h3>
+              <motion.div 
+                key={index} 
+                variants={fadeIn}
+                className="text-center"
+              >
+                <div className="flex justify-center">
+                  {member.image ? (
+                    <img 
+                      src={member.image}
+                      alt={member.name}
+                      className="w-48 h-48 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-48 h-48 rounded-full bg-gray-50 flex items-center justify-center">
+                      <UserCircle className="w-32 h-32 text-gray-400" />
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
                 <p className="text-blue-600">{member.role}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -154,7 +227,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Emergency Contact */}
       <section className="bg-blue-600 text-white py-12 my-12">

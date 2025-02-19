@@ -1,12 +1,19 @@
 import React from 'react';
 import { Droplet, Stethoscope, Baby, Heart, FlaskRound as Flask, Presentation as PrescriptionBottle, Clock, UserCheck, Award, Building } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+  <motion.div 
+    whileHover={{ scale: 1.05 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ margin: "-100px" }} // Remove once: true to repeat animations
+    className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+  >
     <Icon className="w-12 h-12 text-blue-600 mb-4" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
-  </div>
+  </motion.div>
 );
 
 const Services = () => {

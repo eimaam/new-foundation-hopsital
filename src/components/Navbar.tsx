@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Heart } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,20 +42,28 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Home</Link>
-            <Link to="/about" className="block hover:bg-blue-700 px-3 py-2 rounded-md">About</Link>
-            <Link to="/services" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Services</Link>
-            <Link to="/team" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Our Team</Link>
-            <Link to="/resources" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Resources</Link>
-            <Link to="/technical-team" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Technical Team</Link>
-            <Link to="/contact" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Contact</Link>
-          </div>
-        </div>
-      )}
+      {/* Mobile Menu with animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <Link to="/" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Home</Link>
+              <Link to="/about" className="block hover:bg-blue-700 px-3 py-2 rounded-md">About</Link>
+              <Link to="/services" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Services</Link>
+              <Link to="/team" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Our Team</Link>
+              <Link to="/resources" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Resources</Link>
+              <Link to="/technical-team" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Technical Team</Link>
+              <Link to="/contact" className="block hover:bg-blue-700 px-3 py-2 rounded-md">Contact</Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

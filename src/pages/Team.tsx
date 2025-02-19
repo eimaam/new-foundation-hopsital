@@ -1,23 +1,35 @@
 import React from 'react';
-import { Mail, Phone, Award } from 'lucide-react';
+import { Mail, Phone, Award, UserCircle } from 'lucide-react';
 import { teamMembers, ITeamMember } from '../data/teamMembers';
+import { motion } from 'framer-motion';
 
 const TeamMember = ({ 
-  image, 
   name, 
-  role
-}: { 
-  image: string, 
-  name: string, 
-  role: string
-}) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <img src={image} alt={name} className="w-full h-64 object-cover" />
+  role,
+  image
+}: ITeamMember) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ margin: "-100px" }}
+    className="bg-white rounded-lg shadow-md overflow-hidden"
+  >
+    <div className="flex justify-center py-6 bg-gray-50">
+      {image ? (
+        <img 
+          src={image} 
+          alt={name} 
+          className="w-32 h-32 rounded-full object-cover"
+        />
+      ) : (
+        <UserCircle className="w-32 h-32 text-gray-400" />
+      )}
+    </div>
     <div className="p-6">
       <h3 className="text-xl font-semibold mb-1">{name}</h3>
       <p className="text-blue-600 mb-2">{role}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 const Team = () => {

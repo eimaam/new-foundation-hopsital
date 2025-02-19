@@ -1,34 +1,27 @@
 import React from 'react';
+import { UserCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { technicalTeamMembers } from '../data/teamMembers';
 import { Wrench, Server, Shield, Database } from 'lucide-react';
 
-const TechnicalTeam = () => {
-  const teamMembers = [
-    {
-      name: "John Smith",
-      role: "Head of IT Infrastructure",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      expertise: ["Network Management", "System Administration", "IT Security"]
-    },
-    {
-      name: "Alice Johnson",
-      role: "Medical Equipment Specialist",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      expertise: ["Medical Device Maintenance", "Equipment Calibration", "Technical Training"]
-    },
-    {
-      name: "David Chen",
-      role: "Database Administrator",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      expertise: ["Database Management", "Data Security", "System Integration"]
-    },
-    {
-      name: "Sarah Williams",
-      role: "IT Security Specialist",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      expertise: ["Cybersecurity", "Risk Assessment", "Security Protocols"]
-    }
-  ];
+const TechnicalTeamMember = ({ name, role }: { name: string, role: string }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ margin: "-100px" }}
+    className="bg-white rounded-lg shadow-md overflow-hidden"
+  >
+    <div className="flex justify-center py-6 bg-gray-50">
+      <UserCircle className="w-32 h-32 text-gray-400" />
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl font-semibold mb-1">{name}</h3>
+      <p className="text-blue-600 mb-2">{role}</p>
+    </div>
+  </motion.div>
+);
 
+const TechnicalTeam = () => {
   const responsibilities = [
     {
       icon: Wrench,
@@ -57,28 +50,16 @@ const TechnicalTeam = () => {
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Technical Team</h1>
-          <p className="text-xl">Meet the experts behind our hospital's technical operations</p>
+          <h1 className="text-4xl font-bold mb-4">Our Technical Team</h1>
+          <p className="text-xl">Meet the experts behind our medical technology</p>
         </div>
       </div>
 
-      {/* Team Members */}
+      {/* Team Grid */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-12 text-center">Our Technical Experts</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={member.image} alt={member.name} className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-blue-600 mb-4">{ member.role}</p>
-                <div className="space-y-2">
-                  {member.expertise.map((skill, skillIndex) => (
-                    <p key={skillIndex} className="text-gray-600 text-sm">• {skill}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {technicalTeamMembers.map((member, index) => (
+            <TechnicalTeamMember key={index} {...member} />
           ))}
         </div>
       </div>

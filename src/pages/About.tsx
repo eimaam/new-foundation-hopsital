@@ -1,4 +1,5 @@
 import { Clock, Award, Users, Building, Phone, Mail, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
@@ -20,7 +21,12 @@ const About = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ margin: "-100px" }}
+        className="max-w-7xl mx-auto px-4 py-16"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
@@ -87,7 +93,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
