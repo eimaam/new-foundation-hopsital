@@ -50,8 +50,8 @@ const TechnicalTeam = () => {
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Our Technical Team</h1>
-          <p className="text-xl">Meet the experts behind our medical technology</p>
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">Our Technical Team</h1>
+          <p className="text-base md:text-xl">Meet the experts behind our medical technology</p>
         </div>
       </div>
 
@@ -64,15 +64,14 @@ const TechnicalTeam = () => {
         </div>
       </div>
 
-      {/* Responsibilities */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Responsibilities</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Our Responsibilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {responsibilities.map((item, index) => (
               <div key={index} className="text-center">
                 <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
@@ -84,11 +83,10 @@ const TechnicalTeam = () => {
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-blue-600 text-white rounded-lg p-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Need Technical Support?</h2>
-            <p className="text-xl mb-6">Our technical team is available to assist with any equipment or system-related issues</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-4">Need Technical Support?</h2>
+            <p className="text-base md:text-xl mb-6">Our technical team is available to assist with any equipment or system-related issues</p>
             <div className="space-y-2">
-              <p>Internal Extension: 1234</p>
-              <p>Email: support@newfoundation.com</p>
+              <p>Email: support@newfoundationhospitals.com.ng</p>
               <p>Available Monday - Friday: 8:00 AM - 5:00 PM</p>
             </div>
           </div>

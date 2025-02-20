@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative h-[400px] bg-cover bg-center">
+      <div className="relative h-[200px] md:h-[400px] bg-cover bg-center">
         <img 
           src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
           alt="Hospital Building"
@@ -14,9 +14,9 @@ const About = () => {
         />
         <div className="absolute inset-0 bg-blue-900 bg-opacity-75"></div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 text-white">
-            <h1 className="text-4xl font-bold mb-4">About Us</h1>
-            <p className="text-xl">Three decades of excellence in healthcare</p>
+          <div className="max-w-7xl px-4 text-white">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4">About Us</h1>
+            <p className="text-base md:text-xl">Three decades of excellence in healthcare</p>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ const About = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-600 mb-6">
               Established in 1992, New Foundation Hospital is a licensed, private healthcare facility 
               located in Lamisula Jabbamari, Maiduguri, Borno State. We are committed to delivering 
@@ -97,7 +97,7 @@ const About = () => {
 
         {/* Map Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-6">Find Us</h2>
+          <h2 className="text-xl md:text-3xl font-bold mb-6">Find Us</h2>
           <MapLocation />
         </div>
       </motion.div>

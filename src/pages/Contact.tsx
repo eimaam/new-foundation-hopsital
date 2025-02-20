@@ -15,8 +15,8 @@ const Contact = () => {
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl">We're here to help you with any questions or concerns</p>
+          <h1 className="text-xl md:text-4xl font-bold mb-4">Contact Us</h1>
+          <p className="text-base md:text-xl">We're here to help you with any questions or concerns</p>
         </div>
       </div>
 
@@ -29,7 +29,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h2 className="text-2xl font-bold mb-8">Get in Touch</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-8">Get in Touch</h2>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-blue-600 mt-1" />
@@ -63,9 +63,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Working Hours</h3>
                   <p className="text-gray-600">Emergency Services: 24/7</p>
-                  <p className="text-gray-600">Regular Consultations:</p>
+                  {/* <p className="text-gray-600">Regular Consultations:</p>
                   <p className="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p> */}
                 </div>
               </div>
             </div>

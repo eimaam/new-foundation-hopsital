@@ -55,8 +55,8 @@ const Services = () => {
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl">Comprehensive healthcare solutions for you and your family</p>
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">Our Services</h1>
+          <p className="text-lg md:text-xl">Comprehensive healthcare solutions for you and your family</p>
         </div>
       </div>
 
@@ -69,10 +69,9 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Special Clinical Services */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Special Clinical Services</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Special Clinical Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-4">
               <h3 className="font-semibold mb-2">Primary Care</h3>
@@ -108,7 +107,7 @@ const Services = () => {
       {/* Why Choose Us */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Us</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Why Choose Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <Clock className="w-12 h-12 mx-auto mb-4 text-blue-600" />
@@ -129,10 +128,9 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Healthcare Tiers */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Healthcare Tiers</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Our Healthcare Tiers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-blue-50 p-6 rounded-lg">
               <Building className="w-12 h-12 text-blue-600 mb-4" />
