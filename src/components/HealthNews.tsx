@@ -6,7 +6,7 @@ interface NewsItem {
   title: string;
   description: string;
   url: string;
-  urlToImage: string;
+  image: string; // Changed from urlToImage
   publishedAt: string;
   source: {
     name: string;
@@ -22,7 +22,7 @@ const HealthNews = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=healthcare+medical&language=en&sortBy=publishedAt&pageSize=6&apiKey=${import.meta.env.VITE_PUBLIC_NEWS_API_KEY}`
+          `https://gnews.io/api/v4/search?q=healthcare+medical&lang=en&max=6&apikey=${import.meta.env.VITE_GNEWS_API_KEY}`
         );
 
         if (!response.ok) {
@@ -84,10 +84,10 @@ const HealthNews = () => {
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
               <div className="h-48 overflow-hidden">
-                {item.urlToImage ? (
+                {item?.image ? ( // Changed from urlToImage
                   <img
-                    src={item.urlToImage}
-                    alt={item.title}
+                    src={item?.image}
+                    alt={item?.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.currentTarget.src = 'https://via.placeholder.com/400x200?text=Health+News';
@@ -101,12 +101,12 @@ const HealthNews = () => {
               </div>
               <div className="p-6">
                 <p className="text-sm text-gray-500 mb-2">
-                  {new Date(item.publishedAt).toLocaleDateString()} • {item.source.name}
+                  {new Date(item?.publishedAt).toLocaleDateString()} • {item?.source.name}
                 </p>
-                <h3 className="text-base md:text-xl font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">{item.description}</p>
+                <h3 className="text-base md:text-xl font-semibold mb-2 line-clamp-2">{item?.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-3">{item?.description}</p>
                 <a
-                  href={item.url}
+                  href={item?.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 font-medium"
