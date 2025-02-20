@@ -73,7 +73,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-bold mb-8">Send Us a Message</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-8">Send Us a Message</h2>
             <motion.form 
               className="space-y-6"
               initial={{ opacity: 0 }}
@@ -163,9 +163,9 @@ const Contact = () => {
       {/* Emergency Contact Banner */}
       <div className="bg-red-600 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-2">Emergency? Call Us Now</h2>
-          <p className="text-xl">07060999747</p>
-          <p className="mt-2">
+          <h2 className="text-xl md:text-2xl font-bold mb-2">Emergency? Call Us Now</h2>
+          <p className="text-lg md:text-xl">07060999747</p>
+          <p className="text-sm md:mt-2">
             Available 24/7 to meet the healthcare needs of our patients with compassion, professionalism, and state-of-the-art medical care.
           </p>
         </div>
