@@ -84,7 +84,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span> newfhm03@gmail.com</span>
+                  <span>info@newfoundationhospitals.com.ng</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-blue-600" />

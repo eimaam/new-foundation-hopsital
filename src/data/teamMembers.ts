@@ -6,7 +6,6 @@ export interface ITeamMember {
 
 // Updated teamMembers array with correct names and roles
 export const teamMembers: ITeamMember[] = [
-  { name: "Dr Ahmed Ibrahim", role: "Chief Medical Director" },
   { name: "Dr Umoru BA", role: "Medical Director/Consultant" },
   { name: "Dr Chidama Paul", role: "Doctor" }, 
   { name: "Ibrahim David", role: "Head Nurse" },

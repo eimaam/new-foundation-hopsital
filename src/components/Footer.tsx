@@ -16,7 +16,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
-                newfhm03@gmail.com
+                info@newfoundationhospitals.com.ng
               </p>
               <p className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
