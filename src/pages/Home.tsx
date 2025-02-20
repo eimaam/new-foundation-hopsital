@@ -2,11 +2,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Clock, Award, Users, Phone, Stethoscope, Baby, Heart, FlaskRound, Presentation, Droplet, UserCircle } from 'lucide-react';
 import { teamMembers } from '../data/teamMembers';
+import HealthNews from '../components/HealthNews';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
-  // Updated heroImages array with images depicting Black healthcare professionals and hospital scenes.
   const heroImages = [
     {
       url: "https://plus.unsplash.com/premium_photo-1731410157470-cd041742d53a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -301,6 +301,9 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Health News Section */}
+      <HealthNews />
 
       {/* Emergency Contact */}
       <section className="bg-blue-600 text-white py-12 my-12">

@@ -1,29 +1,9 @@
 import React from 'react';
-import { BookOpen, Video, Camera, Calendar } from 'lucide-react';
+import { Video, Camera, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import HealthNews from '../components/HealthNews';
 
 const Resources = () => {
-  const blogs = [
-    {
-      title: "Understanding Preventive Healthcare",
-      date: "March 15, 2024",
-      excerpt: "Learn about the importance of preventive healthcare and how it can benefit you and your family.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "COVID-19 Updates and Guidelines",
-      date: "March 10, 2024",
-      excerpt: "Stay informed about the latest COVID-19 protocols and safety measures at New Foundation Hospital.",
-      image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Maternal Health: What to Expect",
-      date: "March 5, 2024",
-      excerpt: "A comprehensive guide for expecting mothers about prenatal care and delivery services.",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    }
-  ];
-
   const photos = [
     {
       title: "State-of-the-art Facilities",
@@ -61,15 +41,11 @@ const Resources = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
         >
-          <a href="#blogs" className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
-            <BookOpen className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-            <h3 className="text-lg md:text-xl font-semibold">Blogs & News</h3>
-          </a>
-          <a href="#photos" className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+          <a href="#news" className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <Camera className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-            <h3 className="text-lg md:text-xl font-semibold">Photo Gallery</h3>
+            <h3 className="text-lg md:text-xl font-semibold">Health News</h3>
           </a>
           <a href="#videos" className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
             <Video className="w-12 h-12 mx-auto mb-4 text-blue-600" />
@@ -81,43 +57,20 @@ const Resources = () => {
           </a>
         </motion.div>
 
-        {/* Blogs Section */}
-        <motion.section 
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ margin: "-100px" }}
-          id="blogs" 
-          className="mb-16"
-        >
-          <h2 className="text-lg md:text-3xl font-bold mb-8">Latest Blog Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogs.map((blog, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <p className="text-gray-500 text-sm mb-2">{blog.date}</p>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">{blog.title}</h3>
-                  <p className="text-gray-600 mb-4">{blog.excerpt}</p>
-                  <a href="#" className="text-blue-600 hover:text-blue-700">Read more →</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.section>
+        <section id="news" className="mb-16">
+          <HealthNews />
+        </section>
 
-        {/* Photo Gallery */}
+        {/* Photo Gallery - Coming Soon */}
         <section id="photos" className="mb-16">
           <h2 className="text-xl md:text-3xl font-bold mb-8">Photo Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {photos.map((photo, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={photo.image} alt={photo.title} className="w-full h-64 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold">{photo.title}</h3>
-                </div>
-              </div>
-            ))}
+          <div className="bg-white p-8 rounded-lg shadow-md text-center">
+            <Camera className="w-16 h-16 mx-auto mb-4 text-blue-600" />
+            <h3 className="text-lg md:text-xl font-semibold mb-4">Coming Soon</h3>
+            <p className="text-gray-600">
+              We're currently curating a collection of photos showcasing our facilities, 
+              medical team, and healthcare services. Check back soon to explore our gallery!
+            </p>
           </div>
         </section>
 
