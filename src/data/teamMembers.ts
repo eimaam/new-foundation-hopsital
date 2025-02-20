@@ -1,34 +1,19 @@
 export interface ITeamMember {
   name: string;
   role: string;
-  image?: string; // Make image optional
+  image?: string; 
 }
 
+// Updated teamMembers array with correct names and roles
 export const teamMembers: ITeamMember[] = [
-  {
-    name: "Dr. Ahmad Ibrahim",
-    role: "Chief Medical Director"
-  },
-  {
-    name: "Dr. Fatima Hassan",
-    role: "Lead Gynecologist"
-  },
-  {
-    name: "Dr. Mohammed Abubakar",
-    role: "Pediatrician"
-  },
-  {
-    name: "Dr. Aisha Yusuf",
-    role: "General Practitioner"
-  },
-  {
-    name: "Dr. Umar Sani",
-    role: "Surgeon"
-  },
-  {
-    name: "Nurse Zainab Muhammad",
-    role: "Head Nurse"
-  }
+  { name: "Dr Ahmed Ibrahim", role: "Chief Medical Director" },
+  { name: "Dr Chidama Paul", role: "Doctor" }, 
+  { name: "Ibrahim David", role: "Head Nurse" },
+  { name: "RN Adam Alkali Baba", role: "Nurse" },
+  { name: "RN Maimuna", role: "Nurse" },
+  { name: "Mohammed Idris", role: "Desk Officer" },
+  { name: "Dr. Dala Abubakar", role: "Surgeon" },
+  { name: "Dr. Chukwuka", role: "Surgeon" }
 ];
 
 export const technicalTeamMembers: ITeamMember[] = [
